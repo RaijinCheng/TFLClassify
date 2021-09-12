@@ -37,7 +37,7 @@ class RecognitionListViewModel : ViewModel() {
 /**
  * Simple Data object with two fields for the label and probability
  */
-data class Recognition(val label:String, val confidence:Float) {
+data class Recognition(val label:String, var barcode:String, val confidence:Float) {
 
     // For easy logging
     override fun toString():String{
@@ -47,4 +47,6 @@ data class Recognition(val label:String, val confidence:Float) {
     // Output probability as a string to enable easy data binding
     val probabilityString = String.format("%.1f%%", confidence * 100.0f)
 
+    // Barcode item string
+    var barcode_item = barcode
 }

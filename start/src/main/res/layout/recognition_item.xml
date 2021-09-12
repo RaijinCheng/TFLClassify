@@ -42,6 +42,17 @@
             tools:text="Orange" />
 
         <TextView
+            android:id="@+id/recognitionBarcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:padding="8dp"
+            android:text="@{recognitionItem.barcode_item}"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="#64FFDA"
+            tools:text="Cola Can" />
+
+        <TextView
             android:id="@+id/recognitionProb"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

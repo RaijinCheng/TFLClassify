@@ -219,7 +219,8 @@ class MainActivity : AppCompatActivity() {
         override fun analyze(imageProxy: ImageProxy) {
 
             val items = mutableListOf<Recognition>()
-
+            //Display Barcode Product Name
+            var barcode_product_name = ""
             // TODO 2: Convert Image to Bitmap then to TensorImage
             val tfImage = TensorImage.fromBitmap(toBitmap(imageProxy))
             // TODO 3: Process the image using the trained model, sort and pick out the top results
@@ -229,7 +230,7 @@ class MainActivity : AppCompatActivity() {
                 }.take(MAX_RESULT_DISPLAY) // take the top results
             // TODO 4: Converting the top probability items into a list of recognitions
             for (output in outputs) {
-                items.add(Recognition(output.label, output.score))
+                items.add(Recognition(output.label, barcode_product_name, output.score))
             }
             // START - Placeholder code at the start of the codelab. Comment this block of code out.
 /*
